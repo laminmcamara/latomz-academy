@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        img#logo {
+            display: block;
+            margin-bottom: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin: 0.75em 0 0.25em;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+        select.form-control {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: white url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+            background-size: 1em;
+            cursor: pointer;
+        }
+        textarea.form-control.signature {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button.btn {
+            background-color: #25D366; /* WhatsApp green */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            width: 100%;
+        }
+        button.btn:hover,
+        button.btn:focus {
+            background-color: #1ebe57;
+            outline: none;
+        }
+
+        .terms-conditions {
+            max-width: 700px;
+            margin: 2rem auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        
+        .terms-conditions h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .terms-conditions ol {
+            padding-left: 1.2rem;
+        }
+        
+        .terms-conditions li {
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <img id="logo" src="logo.jpg" alt="Baduma Youths Logo" />
+
+    <h2>Application Form</h2>
+
+    <form id="applicationForm" novalidate>
+        <label for="beginnersAdvance">Beginners Advance:</label>
+        <select id="beginnersAdvance" class="form-control" name="beginnersAdvance" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Beginners">Beginners</option>
+            <option value="Advance">Advance</option>
+        </select>
+
+        <label for="name">Name of Applicant:</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Your full name" required />
+
+        <label for="sex">Sex:</label>
+        <select id="sex" name="gender" class="form-control" required>
+            <option value="" disabled selected>Select your sex</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="address1">Address Line 1:</label>
+        <input type="text" id="address1" name="address1" class="form-control" placeholder="Address line 1" required />
+
+        <label for="address2">Address Line 2 (optional):</label>
+        <input type="text" id="address2" name="address2" class="form-control" placeholder="Address line 2" />
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation" class="form-control" placeholder="Your occupation" required />
+
+        <label for="telephone">Telephone:</label>
+        <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Your phone number" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required />
+        
+        <label for="signature">Signature:</label>
+        <textarea id="signature" name="signature" class="form-control signature" placeholder="Your signature" required></textarea>
+        
+        <div>
+            <input type="checkbox" id="agree" name="agree" required />
+            <label for="agree">
+              I agree to the <a href="/terms-and-conditions" target="_blank" rel="noopener">Terms and Conditions</a>
+            </label>
+          </div>
+          
+        <button type="submit" class="btn">Send to WhatsApp</button>
+    </form>
+    <section class="terms-conditions">
+        <h2>Terms and Conditions</h2>
+        <ol>
+            <li><strong>Course Enrollment:</strong> By enrolling in Latomz Natural Food Processing and Academy’s cake baking and decoration training, you agree to comply fully with the course schedule, guidelines, and instructions provided by the trainers.</li>
+            <li><strong>Payment and Refunds:</strong> Course fees must be paid in full prior to the start of training. Refunds are not available once the course has commenced except under exceptional circumstances and at the sole discretion of Latomz Academy.</li>
+            <li><strong>Attendance and Participation:</strong> Regular attendance and active participation are required to successfully complete the training. Latomz Academy reserves the right to withhold certification if attendance requirements are not met.</li>
+            <li><strong>Health and Safety:</strong> Participants must adhere to all health and safety rules during practical sessions. Latomz Academy is not liable for any injuries resulting from failure to follow instructions.</li>
+            <li><strong>Intellectual Property:</strong> All course materials, recipes, and training content are the intellectual property of Latomz Academy and may not be reproduced, distributed, or used for commercial purposes without prior written permission.</li>
+            <li><strong>Use of Facilities and Equipment:</strong> Participants must use equipment and facilities responsibly and report any damages immediately. Costs for damages caused by negligence may be charged to the participant.</li>
+            <li><strong>Privacy:</strong> Personal information collected during enrollment will be used solely for administration purposes and will not be shared with third parties without consent.</li>
+            <li><strong>Modification of Terms:</strong> Latomz Academy reserves the right to modify these terms and conditions at any time. Participants will be notified of significant changes prior to continuing the training.</li>
+        </ol>
+    </section>
+    
+    <script>
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from normal submission
+
+            // Validate form manually (HTML5 validation will show built-in messages)
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+
+            const formData = {
+                beginnersAdvance: document.getElementById('beginnersAdvance').value,
+                name: document.getElementById('name').value.trim(),
+                gender: document.getElementById('sex').value,
+                address: document.getElementById('address').value.trim(),
+                occupation: document.getElementById('occupation').value.trim(),
+                telephone: document.getElementById('telephone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                signature: document.getElementById('signature').value.trim(),
+            };
+
+            const whatsappNumber = '2207938886'; // Replace this with your WhatsApp number (include country code, no + or 00)
+            const message = 
+                `Beginners Advance: ${formData.beginnersAdvance}\n` +
+                `Name: ${formData.name}\n` +
+                `Gender: ${formData.sex}\n` +
+                `Address: ${formData.address}\n` +
+                `Occupation: ${formData.occupation}\n` +
+                `Telephone: ${formData.telephone}\n` +
+                `Email: ${formData.email}\n` +
+                `Signature: ${formData.signature}`;
+
+            const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp chat in a new tab
+            window.open(url, '_blank');
+
+            // Show confirmation alert
+            alert('Your application message has been prepared and will open in WhatsApp. Please check and send it.');
+
+            // Optionally reset form after submission
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
