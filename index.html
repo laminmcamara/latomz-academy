@@ -158,47 +158,56 @@
     
     <script>
         document.getElementById('applicationForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from normal submission
-
-            // Validate form manually (HTML5 validation will show built-in messages)
+            event.preventDefault();
+        
             if (!this.checkValidity()) {
                 this.reportValidity();
                 return;
             }
-
+            
+            if (!document.getElementById('agree').checked) {
+                alert('You must agree to the Terms and Conditions before submitting.');
+                return;
+            }
+        
             const formData = {
                 beginnersAdvance: document.getElementById('beginnersAdvance').value,
                 name: document.getElementById('name').value.trim(),
                 gender: document.getElementById('sex').value,
-                address: document.getElementById('address').value.trim(),
+                address1: document.getElementById('address1').value.trim(),
+                address2: document.getElementById('address2').value.trim(),
                 occupation: document.getElementById('occupation').value.trim(),
                 telephone: document.getElementById('telephone').value.trim(),
                 email: document.getElementById('email').value.trim(),
                 signature: document.getElementById('signature').value.trim(),
             };
-
-            const whatsappNumber = '2207938886'; // Replace this with your WhatsApp number (include country code, no + or 00)
-            const message = 
+        
+            const whatsappNumber = '2207938886'; // Your WhatsApp number
+        
+            const addressCombined = formData.address1 + (formData.address2 ? ', ' + formData.address2 : '');
+        
+            const message =
                 `Beginners Advance: ${formData.beginnersAdvance}\n` +
                 `Name: ${formData.name}\n` +
-                `Gender: ${formData.sex}\n` +
-                `Address: ${formData.address}\n` +
+                `Gender: ${formData.gender}\n` +
+                `Address: ${addressCombined}\n` +
                 `Occupation: ${formData.occupation}\n` +
                 `Telephone: ${formData.telephone}\n` +
                 `Email: ${formData.email}\n` +
                 `Signature: ${formData.signature}`;
-
+        
             const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-            // Open WhatsApp chat in a new tab
-            window.open(url, '_blank');
-
-            // Show confirmation alert
-            alert('Your application message has been prepared and will open in WhatsApp. Please check and send it.');
-
-            // Optionally reset form after submission
-            this.reset();
+        
+            const newWindow = window.open(url, '_blank');
+        
+            if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+                alert('Pop-up blocked! Please allow pop-ups for this website.');
+            } else {
+                alert('Your application message has been prepared and will open in WhatsApp. Please check and send it.');
+                this.reset();
+            }
         });
+        
     </script>
 
 </body>
