@@ -1,0 +1,5 @@
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+.DS_Store

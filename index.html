@@ -129,6 +129,37 @@
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="Your email address" required />
+
+        <fieldset>
+            <legend>How did you hear about us?</legend>
+          
+            <label>
+              <input type="radio" name="referral" value="Friend Referral" required />
+              From a friend referral
+            </label><br/>
+          
+            <label>
+              <input type="radio" name="referral" value="Used your product" />
+              I used your product
+            </label><br/>
+          
+            <label>
+              <input type="radio" name="referral" value="Advertisement" />
+              Advertisement
+            </label><br/>
+          
+            <label>
+              <input type="radio" name="referral" value="Social Media" />
+              Social media
+            </label><br/>
+          
+            <label>
+              <input type="radio" name="referral" value="Other" id="referralOtherRadio" />
+              Other (please specify)
+            </label><br/>
+          
+            <input type="text" id="referralOtherText" name="referralOtherText" placeholder="Please specify" style="display:none; margin-top: 0.5rem; padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;" />
+          </fieldset>
         
         <label for="signature">Signature:</label>
         <textarea id="signature" name="signature" class="form-control signature" placeholder="Your signature" required></textarea>
@@ -206,6 +237,22 @@
                 alert('Your application message has been prepared and will open in WhatsApp. Please check and send it.');
                 this.reset();
             }
+        });
+            const otherRadio = document.getElementById('referralOtherRadio');
+            const otherText = document.getElementById('referralOtherText');
+            const radios = document.getElementsByName('referral');
+      
+            radios.forEach(radio => {
+            radio.addEventListener('change', function() {
+            if (otherRadio.checked) {
+              otherText.style.display = 'block';
+              otherText.setAttribute('required', 'required');
+            } else {
+              otherText.style.display = 'none';
+              otherText.removeAttribute('required');
+              otherText.value = '';
+            }
+          });
         });
         
     </script>
