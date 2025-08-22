@@ -1,25 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Application Form</title>
+    <meta name="author" content="Latomz Natural Food Processing & Academy">
+    <meta name="description" content="Professional and reusable letterhead for Latomz Natural Food Processing & Academy, optimized for high-quality digital and print output.">
+    <title>Latomz Natural Food Processing & Academy | Official Letterhead</title>
     <style>
+        :root {
+            --primary-color: #027a2f;
+            --secondary-color: #333333;
+            --light-text-color: #666666;
+            --border-color: #cccccc;
+            --header-border-color: #000000;
+            --font-main: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            --font-body: 'Georgia', serif;
+          }
+
         body {
             font-family: Arial, sans-serif;
             margin: 20px auto;
             max-width: 600px;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #252525;
             border-radius: 8px;
-            background-color: #fafafa;
+            background-color: rgb(255, 255, 247);
+            -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
         }
-        img#logo {
-            display: block;
-            margin-bottom: 20px;
-            max-width: 100%;
-            height: auto;
-        }
+
+        
+        *,
+        *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+
+         /* --- Modern Page Layout (Flexbox) ---
+       This ensures the footer sticks to the bottom, even on short letters. */
+    .letter-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
+        max-width: 210mm; /* A4 width */
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for screen view */
+      }
+
+         /* --- Page Layout for A4 Printing --- */
+    @page {
+        size: A4;
+        margin: 2cm;
+      }
+
+        /* --- Header Section --- */
+        .letterhead-header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding: 20px;
+        border-bottom: 4px solid var(--header-border-color);
+      }
+      
+      .logo-container {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 120px;  /* A balanced size for the logo's container */
+        height: 100px; /* Restored to a sensible height */
+      }
+
+      .logo {
+        position: relative;
+        left: -40px;
+        top: -80px;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+      }
+      
+      .logo1 {position: relative;
+          top: 10px;
+          right: -50px;
+          width: 130px;
+          height: 40px;
+      }
+      .company-details {
+        flex-grow: 1;
+      }
+  
+      .company-name {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        margin: 0 0 4px;
+      }
+
+      .company-tagline {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--light-text-color);
+        margin: 0 0 15px;
+      }
+  
+      /* --- Enhanced Contact Details with Icons --- */
+      .contact-details {
+        font-size: 0.9rem;
+        font-style: normal;
+        line-height: 1.7;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .contact-item svg {
+        width: 14px;
+        height: 14px;
+        fill: var(--primary-color);
+        flex-shrink: 0;
+      }
+      header {background-color: rgb(255, 255, 247);}
+
+        
         h2 {
             text-align: center;
             margin-bottom: 1em;
@@ -38,6 +146,9 @@
             box-sizing: border-box;
             font-size: 1rem;
         }
+
+        .form-control:hover {background-color: #f1f3e9;}
+
         select.form-control {
             appearance: none;
             -webkit-appearance: none;
@@ -88,12 +199,67 @@
             line-height: 1.4;
         }
         
+         /* --- Refined Footer Section --- */
+    .letterhead-footer {
+        border-top: 1px solid var(--border-color);
+        padding: 15px 20px;
+        font-size: 0.85rem;
+        color: var(--light-text-color);
+        text-align: center;
+        font-style: italic;
+      }
+
+        /* --- Print-Specific Styles for Perfect PDF Output --- */
+    @media print {
+        body {
+          background-color: #fff;
+        }
+        .letter-wrapper {
+          box-shadow: none; /* Remove shadow for printing */
+          min-height: auto;
+        }
+        .letterhead-footer {
+          /* Fixed position is better for multi-page documents */
+          position: fixed;
+          bottom: 1cm;
+          left: 2cm;
+          right: 2cm;
+          width: auto;
+        }
+      }
     </style>
 </head>
 <body>
 
-    <img id="logo" src="logo.jpg" alt="Baduma Youths Logo" />
-
+    <header class="letterhead-header">
+        <div class="logo-container">
+          <!-- HTML attributes for width/height have been removed. CSS handles everything. -->
+          <img src="image1.png" alt="Latomz Natural Food Processing & Academy Logo" class="logo1">
+          <img src="image2.png" alt="Latomz Natural Food Processing & Academy Logo" class="logo" >
+        </div>
+        <div class="company-details">
+          <h1 class="company-name"><span style="color: darkred;"><strong>Latomz Natural</strong></span> <span style="color: rgb(38, 38, 41);">Food Processing & Academy</span></h1>
+          <p class="company-tagline">Committed to Quality and Excellence <img src="image.png" class="arrow" width="20px" height="20px"> Varieties of <span style="color: rgb(85, 85, 213);">Cakes</span>, <span style="color: rgb(85, 85, 213);">Sweetened Yoghurts</span>, <span style="color: rgb(85, 85, 213);">Icecream</span> and <span style="color: rgb(85, 85, 213);">more...</span></p>
+  
+          <address class="contact-details">
+            <div class="contact-item">
+              <!-- Inlined SVG icon for location -->
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+              <span>Brikama New Town, Opposite Gambia Teacher's Union, West Coast Region, The Gambia</span>
+            </div>
+            <div class="contact-item">
+              <!-- Inlined SVG icon for phone -->
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+              <span>(+220) 7938886 | (+220) 3591886</span>
+            </div>
+            <div class="contact-item">
+              <!-- Inlined SVG icon for email -->
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+              <span>latdaffeh12@gmail.com</span>
+            </div>
+          </address>
+        </div>
+      </header>
     <h2>Application Form</h2>
 
     <form id="applicationForm" novalidate>
@@ -186,7 +352,9 @@
             <li><strong>Modification of Terms:</strong> Latomz Academy reserves the right to modify these terms and conditions at any time. Participants will be notified of significant changes prior to continuing the training.</li>
         </ol>
     </section>
-    
+    <footer class="letterhead-footer">
+        <p>Latomz Natural Food Processing & Academy &nbsp;|&nbsp; Excellence in Natural Food Training and Processing</p>
+      </footer>
     <script>
         document.getElementById('applicationForm').addEventListener('submit', function(event) {
             event.preventDefault();
