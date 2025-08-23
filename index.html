@@ -24,7 +24,7 @@
             padding: 20px;
             border: 1px solid #252525;
             border-radius: 8px;
-            background-color: rgba(231, 237, 224, 0.555);
+            background-color: none;
             -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
         }
@@ -337,12 +337,11 @@
               Social media
             </label><br/>
           
-            <label>
-              <input type="radio" name="referral" value="Other" id="referralOtherRadio" />
+            <label for="referralOtherRadio">
+              <input type="radio" name="referral" value="Other" id="referralOtherRadio" aria-controls="referralOtherText" />
               Other (please specify)
-            </label><br/>
-          
-            <input type="text" id="referralOtherText" name="referralOtherText" placeholder="Please specify" style="display:none; margin-top: 0.5rem; padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;" />
+          </label><br/>
+          <input type="text" id="referralOtherText" name="referralOtherText" placeholder="Please specify" style="display:none; margin-top: 0.5rem; padding: 8px; width: 100%; border: 1px solid #ccc; border-radius: 4px;" aria-label="Please specify the other source"/>
           </fieldset>
         
         <label for="signature">Signature:</label>
